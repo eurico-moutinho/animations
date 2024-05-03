@@ -1,0 +1,55 @@
+.rating-container
+    display: flex
+    background-color: #262626
+    width: 100%
+    height: 100vh
+    justify-content: center
+    align-items: center
+
+    .rating
+        margin: 0 auto
+        transform: rotateY(180deg)
+        display: flex
+        gap: 30px
+
+        input[type="radio"]
+            display: none
+
+        label
+            display: block
+            cursor: pointer
+            width: 50px
+
+            &::before
+                content: "\f005"
+                font-family: FontAwesome
+                positon: relative
+                display: block
+                font-size: 50px
+                color: #101010
+
+            &::after
+                content: "\f005"
+                font-family: FontAwesome
+                position: absolute
+                display: block
+                font-size: 50px
+                color: #dda429
+                top: 0
+                opacity: 0
+                transition: 0.5s
+                text-shadow: 0 2px 5px rgba(0,0,0,0.5)
+
+        label:hover::after,
+        label:hover ~ label::after,
+        input[type="radio"]:checked ~ label::after
+            opacity: 1
+
+        @media (max-width: 768px)
+            gap: 20px
+
+            label
+                width: 40px
+
+                &::before, &::after
+                    font-size: 40px
