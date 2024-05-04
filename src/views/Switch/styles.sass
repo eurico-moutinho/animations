@@ -18,17 +18,14 @@
             position: absolute
             inset: -4px
 
-        &.active
-            span
-                transform: translateX(150px)
-
         span
             position: absolute
             width: 150px
             height: 5px
             background-color: #0f35df
             pointer-events: none
-            transition: 0.5s ease-in-out
+            transition: 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.0)
+            transform: translateX(var(--translate-x))
 
         p
             position: absolute

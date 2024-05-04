@@ -2,15 +2,15 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue'
 
-const menuOpen = ref(false);
+const menuOpen = ref<boolean>(false);
 
-const toggleMenu = () => {
+const toggleMenu = (): void => {
 
   menuOpen.value = true;
 
 }
 
-const closeMenu = () => {
+const closeMenu = (): void => {
 
   menuOpen.value = false;
 

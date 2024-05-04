@@ -1,9 +1,11 @@
 <script lang="ts">
+import { ref } from 'vue';
 
 export default {
   data() {
     return {
-        box: null as HTMLElement | null
+        box: null as HTMLElement | null,
+        translX: 0 as number
     };
   },
     mounted(): void {
@@ -28,9 +30,19 @@ export default {
 
         }
 
+        const changeX = ref<boolean>(false);
+
         this.box?.addEventListener('click', () => {
 
-            this.box?.classList.toggle('active');
+            changeX.value = !changeX.value;
+
+            this.translX = 0;
+
+            if (changeX.value) {
+
+                this.translX = 150;
+
+            }
 
         });
     }
