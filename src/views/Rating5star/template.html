@@ -1,15 +1,16 @@
 
 <div class="rating-container">
     <span class="rating">
-        <input type="radio" name="rating" value="5" id="star5" />
+        <input type="radio" name="rating" v-bind:value="5" id="star5" v-model="rating"/>
         <label for="star5"></label>
-        <input type="radio" name="rating" value="4" id="star4" />
+        <input type="radio" name="rating" v-bind:value="4" id="star4" v-model="rating"/>
         <label for="star4"></label>
-        <input type="radio" name="rating" value="3" id="star3" />
+        <input type="radio" name="rating" v-bind:value="3" id="star3" v-model="rating"/>
         <label for="star3"></label>
-        <input type="radio" name="rating" value="2" id="star2" />
+        <input type="radio" name="rating" v-bind:value="2" id="star2" v-model="rating"/>
         <label for="star2"></label>
-        <input type="radio" name="rating" value="1" id="star1" />
+        <input type="radio" name="rating" v-bind:value="1" id="star1" v-model="rating"/>
         <label for="star1"></label>
     </span>
+    <p>You have selected {{ rating }} stars</p>
 </div>
