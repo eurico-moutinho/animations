@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/switch',
       name: 'switch',
       component: () => import('../views/Switch/Switch.vue')
+    },
+    {
+      path: '/glassmorphism',
+      name: 'glassmorphism',
+      component: () => import('../views/Glassmorphism/Glassmorphism.vue')
     }
   ]
 })
