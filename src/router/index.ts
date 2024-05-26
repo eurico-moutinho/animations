@@ -22,6 +22,16 @@ const router = createRouter({
       path: '/glassmorphism',
       name: 'glassmorphism',
       component: () => import('../views/Glassmorphism/Glassmorphism.vue')
+    },
+    {
+      path: '/direction-button',
+      name: 'direction-button',
+      component: () => import('../views/DirectionButton/DirectionButton.vue')
+    },
+    {
+      path: '/navigation',
+      name: 'navigation',
+      component: () => import('../views/Navigation/Navigation.vue')
     }
   ]
 })
