@@ -21,12 +21,12 @@ const closeMenu = (): void => {
   <header>
     <h1 @mouseenter="toggleMenu" @mouseleave="closeMenu">Animations <i class="fa-solid fa-bars fa-sm"></i></h1>
     <ul v-show="menuOpen" @mouseenter="toggleMenu" @mouseleave="closeMenu">
+      <li @click="closeMenu"><RouterLink to="/navigation">Navigation</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/rating5star">Rating 5 Star</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/light-shadow">Light Shadow</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/switch">Switch</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/glassmorphism">Glassmorphism</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/direction-button">Direction Button</RouterLink></li>
-      <li @click="closeMenu"><RouterLink to="/navigation">Navigation</RouterLink></li>
     </ul>
   </header>
 
