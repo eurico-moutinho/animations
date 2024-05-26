@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/rating5star',
@@ -40,7 +40,9 @@ router.onError((error, to) => {
 
   if (error.message.includes('Failed to fetch dynamically imported module')) {
 
-    window.location.href = to.fullPath;
+    const baseURL = import.meta.env.BASE_URL.replace(/\/$/, '')
+    const newURL = `${baseURL}/#${to.fullPath}`
+    window.location.href = newURL
   }
 })
 
