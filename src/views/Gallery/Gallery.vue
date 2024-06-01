@@ -10,38 +10,44 @@ export default {
         }
     },
     mounted(): void {
-
         const box: HTMLElement | null = document.querySelector('.box');
 
-        if(box) {
-
-            box.addEventListener("mousedown", (event: MouseEvent): void => {
-
+        if (box) {
+            const onMouseDown = (event: MouseEvent | TouchEvent): void => {
                 this.isDragging = true;
+                this.lastPositionX = 'clientX' in event ? event.clientX : event.touches[0].clientX;
+            };
 
-                this.lastPositionX = event.clientX;
+            const onMouseMove = (event: MouseEvent | TouchEvent): void => {
+                if (this.isDragging) {
+                    const clientX = 'clientX' in event ? event.clientX : event.touches[0].clientX;
+                    this.x -= (this.lastPositionX - clientX) / 8;
+                    if(window.innerWidth < 768) {
 
-            });
+                        box.style.transform = "perspective(1000px) scale(0.7) rotateY(" + this.x + "deg)";
 
-            window.addEventListener("mousemove", (event: MouseEvent): void => {
+                    } else {
 
-                if(this.isDragging){
+                        box.style.transform = "perspective(1000px) rotateY(" + this.x + "deg)";
 
-                    this.x -= (this.lastPositionX - event.clientX)/70;
+                    }
 
-                    box.style.transform = "perspective(1000px) rotateY(" + this.x + "deg)";
-
+                    this.lastPositionX = clientX;
                 }
+            };
 
-            });
-
-            window.addEventListener("mouseup", (event: MouseEvent): void => {
-
+            const onMouseUp = (): void => {
                 this.isDragging = false;
+            };
 
-            });
+            box.addEventListener("mousedown", onMouseDown);
+            window.addEventListener("mousemove", onMouseMove);
+            window.addEventListener("mouseup", onMouseUp);
+
+            box.addEventListener("touchstart", onMouseDown);
+            window.addEventListener("touchmove", onMouseMove);
+            window.addEventListener("touchend", onMouseUp);
         }
-
     }
 };
 
