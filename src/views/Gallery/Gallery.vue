@@ -23,11 +23,11 @@ export default {
                     const clientX = 'clientX' in event ? event.clientX : event.touches[0].clientX;
                     
                     if(window.innerWidth < 768) {
-                        this.x -= (this.lastPositionX - clientX) / 1;
+                        this.x -= (this.lastPositionX - clientX) / 2;
                         box.style.transform = "perspective(1000px) scale(0.7) rotateY(" + this.x + "deg)";
 
                     } else {
-                        this.x -= (this.lastPositionX - clientX) / 30;
+                        this.x -= (this.lastPositionX - clientX) / 20;
                         box.style.transform = "perspective(1000px) rotateY(" + this.x + "deg)";
 
                     }
