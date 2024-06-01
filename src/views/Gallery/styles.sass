@@ -1,0 +1,40 @@
+.gallery
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+
+    .box
+        position: relative
+        width: 200px
+        height: 300px
+        transform-style: preserve-3d
+        transform: perspective(1000px)
+        -moz-user-select: -moz-none
+        -khtml-user-select: none
+        -webkit-user-select: none
+
+        span
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: #fff
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px)
+            -webkit-box-reflect: below 0px linear-gradient(transparent, #0002)
+
+            &::before
+                content: ""
+                position: absolute
+                inset: 0
+                z-index: 2
+                box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5)
+
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover

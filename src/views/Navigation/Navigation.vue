@@ -1,5 +1,4 @@
 <script lang="ts">
-import { ref } from 'vue';
 
 export default {
   data() {
@@ -12,7 +11,7 @@ export default {
 
     const ctrl = this;
 
-    const nodeList = document.querySelectorAll('.list');
+    const nodeList: NodeListOf<HTMLElement> = document.querySelectorAll('.list');
 
     ctrl.list = Array.from(nodeList) as HTMLElement[];
 
