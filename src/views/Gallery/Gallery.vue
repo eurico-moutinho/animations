@@ -21,13 +21,13 @@ export default {
             const onMouseMove = (event: MouseEvent | TouchEvent): void => {
                 if (this.isDragging) {
                     const clientX = 'clientX' in event ? event.clientX : event.touches[0].clientX;
-                    this.x -= (this.lastPositionX - clientX) / 8;
+                    
                     if(window.innerWidth < 768) {
-
+                        this.x -= (this.lastPositionX - clientX) / 8;
                         box.style.transform = "perspective(1000px) scale(0.7) rotateY(" + this.x + "deg)";
 
                     } else {
-
+                        this.x -= (this.lastPositionX - clientX) / 3;
                         box.style.transform = "perspective(1000px) rotateY(" + this.x + "deg)";
 
                     }
