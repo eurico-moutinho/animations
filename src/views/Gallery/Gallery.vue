@@ -27,7 +27,7 @@ export default {
                         box.style.transform = "perspective(1000px) scale(0.7) rotateY(" + this.x + "deg)";
 
                     } else {
-                        this.x -= (this.lastPositionX - clientX) / 1;
+                        this.x -= (this.lastPositionX - clientX) / 0.5;
                         box.style.transform = "perspective(1000px) rotateY(" + this.x + "deg)";
 
                     }
