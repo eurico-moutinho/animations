@@ -13,7 +13,7 @@ export default {
     this.shadowText = document.getElementById('light-shadow-text');
     this.shadowLight = document.getElementById('light-shadow-light');
 
-    document.addEventListener('mousemove', (event: MouseEvent | TouchEvent): void => {
+    const onMouseMove = (event: MouseEvent | TouchEvent): void => {
         
         if (this.shadowLight && this.shadowText) {
 
@@ -43,7 +43,10 @@ export default {
 
             this.shadowText.style.textShadow = newShadow;
         }
-    });
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchmove', onMouseMove);
 
   }
 };
