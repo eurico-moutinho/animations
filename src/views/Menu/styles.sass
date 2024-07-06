@@ -1,0 +1,77 @@
+.menu
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100vh
+    background-color: #333
+
+    ul
+        position: relative
+        transform: skewY(-15deg)
+
+        li
+            position: relative
+            list-style: none
+            width: 200px
+            padding: 15px
+            background: #3e3f46
+            z-index: calc(1 * var(--i))
+            transition: 0.45s
+            color: #999
+            cursor: pointer
+
+            span
+                text-transform: uppercase
+                letter-spacing: 0.05em
+                transition: 0.5s
+                font-weight: bold
+
+            &:hover
+                background: #02abff
+                color: #fff
+                transform: translate(40px, 40px)
+
+                &::before
+                    background: #02abff
+
+                &::after
+                    background: #02abff
+
+            &::before
+                content: var(--c)
+                font-family: FontAwesome
+                position: absolute
+                display: flex
+                justify-content: center
+                align-items: center
+                top: 0
+                left: -40px
+                width: 40px
+                height: 100%
+                background: #494a51
+                filter: brightness(0.7)
+                transform-origin: right
+                transform: skewY(45deg)
+                transition: 0.5s
+
+            &::after
+                content: attr(data-text)
+                position: absolute
+                display: flex
+                align-items: center
+                text-transform: uppercase
+                padding-left: 20px
+                color: rgba(0,0,0,0.15)
+                font-weight: bold
+                font-size: 1.2em
+                top: -40px
+                left: 0
+                width: calc(100% - 20px)
+                height: 40px
+                background: #3e3f46
+                transform-origin: bottom
+                transform: skewX(45deg)
+
+            &:last-child::after
+                box-shadow: -120px 120px 20px rgba(0,0,0,0.25)

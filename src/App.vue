@@ -28,6 +28,7 @@ const closeMenu = (): void => {
       <li @click="closeMenu"><RouterLink to="/glassmorphism">Glassmorphism</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/direction-button">Direction Button</RouterLink></li>
       <li @click="closeMenu"><RouterLink to="/gallery">Gallery</RouterLink></li>
+      <li @click="closeMenu"><RouterLink to="/menu">Menu</RouterLink></li>
     </ul>
   </header>
 
